@@ -1,0 +1,29 @@
+.pergunta {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    word-spacing: 5px;
+    font-size: 40px;
+    font-family: "Bookman", "URW Bookman L", serif
+}
+.alternativa {
+    text-align: left;
+    word-spacing: 5px;
+    font-size: 20px;
+    font-family: "Bookman", "URW Bookman L", serif
+}
+.titulo {
+    text-align: left;
+    text-transform: uppercase;
+    font-weight: bold;
+    word-spacing: 5px;
+    font-size: 35px;
+    font-family: "Bookman", "URW Bookman L", serif
+}
+.paragrafo {
+    text-align: left;
+    text-indent: 50px;
+    word-spacing: 5px;
+    font-size: 20px;
+    font-family: "Bookman", "URW Bookman L", serif
+}

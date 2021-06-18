@@ -1,0 +1,27 @@
+{
+  "name": "entrega1",
+  "version": "1.0.0",
+  "description": " primeiro trabalho a ser entregue, Atividade 1 - semana 4",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "primeiro",
+    "trabalho",
+    "para",
+    "entrega",
+    "do",
+    "ano"
+  ],
+  "author": "Anthony Raphael Weiber, Donovan Luiz Grande Chavez, Eric Simões Pinto, Lucca de Souza Santos, Nicolas Jacinto Grzebieniak, Vitor Rodrigues Izidoro",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "init": "^0.1.2",
+    "mongoose": "^5.12.11"
+  }
+}
