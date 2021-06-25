@@ -11,3 +11,7 @@ router.delete('/remover/:id', itemcontroller.usuario_remover);
 
 module.exports = router;
 
+//post: inserir   (C)
+//get: ler        (R)
+//put: atualizar  (U)
+//delete: remover (D)
