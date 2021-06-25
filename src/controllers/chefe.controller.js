@@ -3,6 +3,8 @@ const chefeModel = require('../models/chefe.model.js');
 class chefeController {
     async chefe_inserir(req, res) {
         try {
+            const chefe = await Chefe.create(req.body);
+            if (!chefe) return res.status(406).json({error: 'Erro insere chefe.'})
             return res.status(200).json({ ok: "ok" });
         } catch (error) {
             return res.status(400).json(error);

@@ -50,7 +50,7 @@ const usuarioModel = require('../models/usuario.model.js');
 class usuarioController {
     async usuario_inserir(req, res) {
         try {
-            const usuario = await Usuario.create({nome: 'Lucca', sobrenome: 'Capim', data_de_nasciento:'2005-03-08', tempo_de_jogo: '5', email: 'lucca.souza@tecpuc.com.br'});
+            const usuario = await Usuario.create(req.body);
             if (!usuario) return res.status(406).json({error: 'Erro insere usuario.'})
             return res.status(200).json({ ok: "ok" });
         } catch (error) {

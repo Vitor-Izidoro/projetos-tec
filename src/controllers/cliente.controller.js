@@ -3,6 +3,8 @@ const clienteModel = require('../models/cliente.model');
 class clienteController {
     async cliente_inserir(req, res) {
         try {
+            const cliente = await Cliente.create(req.body);
+            if (!cliente) return res.status(406).json({error: 'Erro insere cliente.'})
             return res.status(200).json({ ok: "ok" });
         } catch (error) {
             return res.status(400).json(error);

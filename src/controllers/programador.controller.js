@@ -3,12 +3,13 @@ const programadorModel = require('../models/programador.model');
 class programadorController {
     async programador_inserir(req, res) {
         try {
+            const programador = await Programador.create(req.body);
+            if (!programador) return res.status(406).json({error: 'Erro insere programador.'})
             return res.status(200).json({ ok: "fununcia" });
         } catch (error) {
             return res.status(400).json(error);
         }
     }
-
     async programador_listar(req, res) {
         try {
          const programador = await programadorModel.find({}).sort({ nome: 1});
