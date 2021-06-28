@@ -3,7 +3,7 @@ const chefeModel = require('../models/chefe.model.js');
 class chefeController {
     async chefe_inserir(req, res) {
         try {
-            const chefe = await Chefe.create(req.body);
+            const chefe = await chefeModel.create(req.body);
             if (!chefe) return res.status(406).json({error: 'Erro insere chefe.'})
             return res.status(200).json({ ok: "ok" });
         } catch (error) {
@@ -13,7 +13,7 @@ class chefeController {
 
     async chefe_listar(req, res) {
         try {
-         const chefe = await chefeModel.find({}).sort({ nome: 1});
+         const chefe = await chefeModel.find({}).sort({ Nome: 1});
          if (!chefe) return res.status(406).json({error: 'Erro listar chefe.'});
          return res.status(200).json(chefe);
         } catch (error) {

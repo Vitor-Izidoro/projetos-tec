@@ -10,8 +10,6 @@ const designer = require('./src/route/designer.route');
 const programador = require('./src/route/programador.route');
 const usuario = require('./src/route/usuario.route');
 const app = express();
-const mongoose = require('mongoose');
-mongoose.connect('mongodb+srv://Vitor:152436hp@cluster0.yn5zq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true});
 
 
   

@@ -3,11 +3,11 @@ const mongoose = require('./database');
 const Schema = mongoose.Schema;
 
 // ============================== criação do esquema ============================== 
-let ChefeSchema = new Schema({
-    nome: { type: String, required: true },
-    sobrenome:{type:String, required: true},
+let chefeSchema = new Schema({
+    Nome: { type: String, required: true },
+    Sobrenome:{type:String, required: true},
     data_de_nascimento: { type: Date, required: true, default: 0 },
-    salario: { type: Number, required: true, default: 0 },
+    Salario: { type: Number, required: true, default: 0 },
 
     //endereço
     cidade: { type: String, required: true },
@@ -17,4 +17,4 @@ let ChefeSchema = new Schema({
 });
 
 // ============================== exportação do modelo ============================== 
-module.exports = mongoose.model('Chefe', ChefeSchema, 'chefe');
+module.exports = mongoose.model('Chefe', chefeSchema, 'chefe');
