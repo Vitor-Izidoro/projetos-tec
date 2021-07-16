@@ -41,13 +41,15 @@ class programadorController {
 
     async programador_remover(req, res) {
         try {
-            return res.status(200).json({ ok: "ok" });
-        } catch {
-            return res.status(400).json(error);
-        }
-    }
-
-}
+            const programador = await Programador.findByIdAndRemove(req.parms.id);
+            if (!programador) return res.status(406).json({error:'Erro exclusão Programador'})
+            return res.status(200).json(programador);
+         }catch {
+             return res.status(400).json(error);
+         }
+     }
+ 
+ }
 
 module.exports = programadorController;
 

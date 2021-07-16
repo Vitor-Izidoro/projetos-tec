@@ -41,13 +41,15 @@ class designerController {
 
     async designer_remover(req, res) {
         try {
-            return res.status(200).json({ ok: "amém" });
-        } catch {
-            return res.status(400).json(error);
-        }
-    }
-
-}
+            const designer = await Designer.findByIdAndRemove(req.parms.id);
+            if (!designer) return res.status(406).json({error:'Erro exclusão Designer'})
+            return res.status(200).json(designer);
+         }catch {
+             return res.status(400).json(error);
+         }
+     }
+ 
+ }
 
 module.exports = designerController;
 

@@ -42,8 +42,10 @@ class chefeController {
 
     async chefe_remover(req, res) {
         try {
-            return res.status(200).json({ ok: "ok" });
-        } catch {
+           const chefe = await Chefe.findByIdAndRemove(req.parms.id);
+           if (!chefe) return res.status(406).json({error:'Erro exclusão Chefe'})
+           return res.status(200).json(chefe);
+        }catch {
             return res.status(400).json(error);
         }
     }

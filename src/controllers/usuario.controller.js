@@ -89,12 +89,14 @@ class usuarioController {
 
     async usuario_remover(req, res) {
         try {
-            return res.status(200).json({ ok: "ok" });
-        } catch {
-            return res.status(400).json(error);
-        }
-    }
-
-}
+            const usuario = await Usuario.findByIdAndRemove(req.parms.id);
+            if (!usuario) return res.status(406).json({error:'Erro exclusão Usuario'})
+            return res.status(200).json(usuario);
+         }catch {
+             return res.status(400).json(error);
+         }
+     }
+ 
+ }
 
 module.exports = usuarioController;

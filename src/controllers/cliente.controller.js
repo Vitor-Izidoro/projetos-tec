@@ -42,13 +42,15 @@ class clienteController {
 
     async cliente_remover(req, res) {
         try {
-            return res.status(200).json({ ok: "ok" });
-        } catch {
-            return res.status(400).json(error);
-        }
-    }
-
-}
+            const cliente = await Cliente.findByIdAndRemove(req.parms.id);
+            if (!cliente) return res.status(406).json({error:'Erro exclusão Cliente'})
+            return res.status(200).json(cliente);
+         }catch {
+             return res.status(400).json(error);
+         }
+     }
+ 
+ }
 
 module.exports = clienteController;
 
