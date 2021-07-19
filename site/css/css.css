@@ -35,3 +35,20 @@
     font-size: 20px;
     font-family: "Comic Sans MS", "Comic Sans", cursive
 }
+.coxinha {
+    text-align: center;
+  
+    font-weight: bold;
+    word-spacing: 5px;
+    font-size: 160px;
+    font-family: 'Brush Script MT', cursive;
+}
+
+.pastel {
+    text-align: center;
+  
+    font-weight: bold;
+    word-spacing: 1px;
+    font-size: 20px;
+    font-family: 'Courier New', monospace;
+}

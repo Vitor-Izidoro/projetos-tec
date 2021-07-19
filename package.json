@@ -15,7 +15,7 @@
     "do",
     "ano"
   ],
-  "author": "Anthony Raphael Weiber, Lucca de Souza Santos, Pedro Henrque Sudario da Silva Nicolas Jacinto Grzebieniak, Vitor Rodrigues Izidoro",
+  "author": "Anthony Raphael Weiber, Donovan Luis Grande Chaves, Lucca de Souza Santos, Pedro Henrque Sudario da Silva Nicolas Jacinto Grzebieniak, Vitor Rodrigues Izidoro",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
