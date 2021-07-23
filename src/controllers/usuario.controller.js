@@ -81,7 +81,9 @@ class usuarioController {
 
     async usuario_atualizar(req, res) {
         try {
-            return res.status(200).json({ ok: "ok" });
+          const usuario = await usuarioModel.findByIdAndUpdate(req.parms.id, { $set:req.body});
+          if (!usuario) return res.status(406).json({ error: 'Erro atualização usuario'});7
+          return res.status(400).json(error);
         } catch {
             return res.status(400).json(error);
         }
@@ -89,7 +91,7 @@ class usuarioController {
 
     async usuario_remover(req, res) {
         try {
-            const usuario = await Usuario.findByIdAndRemove(req.parms.id);
+            const usuario = await usuarioModel.findByIdAndRemove(req.parms.id);
             if (!usuario) return res.status(406).json({error:'Erro exclusão Usuario'})
             return res.status(200).json(usuario);
          }catch {

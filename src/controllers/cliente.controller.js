@@ -34,7 +34,9 @@ class clienteController {
 
     async cliente_atualizar(req, res) {
         try {
-            return res.status(200).json({ ok: "ok" });
+          const cliente = await clienteModel.findByIdAndUpdate(req.parms.id, { $set:req.body});
+          if (!cliente) return res.status(406).json({ error: 'Erro atualização cliente'});7
+          return res.status(400).json(error);
         } catch {
             return res.status(400).json(error);
         }
@@ -42,7 +44,7 @@ class clienteController {
 
     async cliente_remover(req, res) {
         try {
-            const cliente = await Cliente.findByIdAndRemove(req.parms.id);
+            const cliente = await clienteModel.findByIdAndRemove(req.parms.id);
             if (!cliente) return res.status(406).json({error:'Erro exclusão Cliente'})
             return res.status(200).json(cliente);
          }catch {

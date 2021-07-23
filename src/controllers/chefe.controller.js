@@ -34,7 +34,9 @@ class chefeController {
 
     async chefe_atualizar(req, res) {
         try {
-            return res.status(200).json({ ok: "ok" });
+          const chefe = await chefeModel.findByIdAndUpdate(req.parms.id, { $set:req.body});
+          if (!chefe) return res.status(406).json({ error: 'Erro atualização chefe'});7
+          return res.status(400).json(error);
         } catch {
             return res.status(400).json(error);
         }
@@ -42,7 +44,7 @@ class chefeController {
 
     async chefe_remover(req, res) {
         try {
-           const chefe = await Chefe.findByIdAndRemove(req.parms.id);
+           const chefe = await chefeModel.findByIdAndRemove(req.parms.id);
            if (!chefe) return res.status(406).json({error:'Erro exclusão Chefe'})
            return res.status(200).json(chefe);
         }catch {

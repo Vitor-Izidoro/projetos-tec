@@ -33,7 +33,9 @@ class programadorController {
 
     async programador_atualizar(req, res) {
         try {
-            return res.status(200).json({ ok: "aham" });
+          const programador = await programadorModel.findByIdAndUpdate(req.parms.id, { $set:req.body});
+          if (!programador) return res.status(406).json({ error: 'Erro atualização programador'});7
+          return res.status(400).json(error);
         } catch {
             return res.status(400).json(error);
         }
@@ -41,7 +43,7 @@ class programadorController {
 
     async programador_remover(req, res) {
         try {
-            const programador = await Programador.findByIdAndRemove(req.parms.id);
+            const programador = await programadorModel.findByIdAndRemove(req.parms.id);
             if (!programador) return res.status(406).json({error:'Erro exclusão Programador'})
             return res.status(200).json(programador);
          }catch {
