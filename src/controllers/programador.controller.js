@@ -34,7 +34,7 @@ class programadorController {
     async programador_atualizar(req, res) {
         try {
           const programador = await programadorModel.findByIdAndUpdate(req.parms.id, { $set:req.body});
-          if (!programador) return res.status(406).json({ error: 'Erro atualização programador'});7
+          if (!programador) return res.status(406).json({ error: 'Erro atualização programador'});
           return res.status(400).json(error);
         } catch {
             return res.status(400).json(error);

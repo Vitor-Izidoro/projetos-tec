@@ -82,7 +82,7 @@ class usuarioController {
     async usuario_atualizar(req, res) {
         try {
           const usuario = await usuarioModel.findByIdAndUpdate(req.parms.id, { $set:req.body});
-          if (!usuario) return res.status(406).json({ error: 'Erro atualização usuario'});7
+          if (!usuario) return res.status(406).json({ error: 'Erro atualização usuario'});
           return res.status(400).json(error);
         } catch {
             return res.status(400).json(error);

@@ -290,6 +290,32 @@ app.get('/menu.html', (req,res)=>{
       })
     })
 
+    app.get('/creditos.html', (req,res)=>{
+      console.log('teste')
+      fs.readFile('./site/creditos.html',function(err,data){
+        if(err){
+          res.writeHead("404 Not Found");
+        }
+        res.writeHead(200,{'Content-Type':'text/html'});
+        res.write(data);
+        return res.end();
+      })
+    })
+
+    
+    app.get('/sociais.html', (req,res)=>{
+      console.log('teste')
+      fs.readFile('./site/sociais.html',function(err,data){
+        if(err){
+          res.writeHead("404 Not Found");
+        }
+        res.writeHead(200,{'Content-Type':'text/html'});
+        res.write(data);
+        return res.end();
+      })
+    })
+    
+    
 
 
 

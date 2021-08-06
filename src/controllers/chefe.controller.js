@@ -35,7 +35,7 @@ class chefeController {
     async chefe_atualizar(req, res) {
         try {
           const chefe = await chefeModel.findByIdAndUpdate(req.parms.id, { $set:req.body});
-          if (!chefe) return res.status(406).json({ error: 'Erro atualização chefe'});7
+          if (!chefe) return res.status(406).json({ error: 'Erro atualização chefe'});
           return res.status(400).json(error);
         } catch {
             return res.status(400).json(error);

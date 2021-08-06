@@ -35,7 +35,7 @@ class clienteController {
     async cliente_atualizar(req, res) {
         try {
           const cliente = await clienteModel.findByIdAndUpdate(req.parms.id, { $set:req.body});
-          if (!cliente) return res.status(406).json({ error: 'Erro atualização cliente'});7
+          if (!cliente) return res.status(406).json({ error: 'Erro atualização cliente'});
           return res.status(400).json(error);
         } catch {
             return res.status(400).json(error);

@@ -34,7 +34,7 @@ class designerController {
     async designer_atualizar(req, res) {
         try {
           const designer = await designerModel.findByIdAndUpdate(req.parms.id, { $set:req.body});
-          if (!designer) return res.status(406).json({ error: 'Erro atualização designer'});7
+          if (!designer) return res.status(406).json({ error: 'Erro atualização designer'});
           return res.status(400).json(error);
         } catch {
             return res.status(400).json(error);
